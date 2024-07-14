@@ -1,1 +1,3 @@
 pnpm install zod
+
+pnpm i @hookform/resolvers
