@@ -14,10 +14,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const schemaForm = z.object({
   nome: z.string().min(5),
-  email: z.string(),
+  email: z.string().min(1).email(),
   telefone: z.string(),
-  senha: z.string(),
-  senhaVerificada: z.string(),
+  senha: z.string().min(6),
+  senhaVerificada: z.string().min(6),
 })
 
 type FormInputTipos = z.infer<typeof schemaForm>
