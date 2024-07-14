@@ -10,14 +10,7 @@ import {
 } from "../../components";
 import { useForm, Controller } from "react-hook-form";
 import { z } from 'zod'
-
-interface FormInputTipos {
-  nome: string;
-  email: string;
-  telefone: string;
-  senha: string;
-  senhaVerificada: string;
-}
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const schemaForm = z.object({
   nome: z.string().min(5),
@@ -27,6 +20,8 @@ const schemaForm = z.object({
   senhaVerificada: z.string(),
 })
 
+type FormInputTipos = z.infer<typeof schemaForm>
+
 const CadastroPessoal = () => {
   const {
     register,
@@ -34,6 +29,7 @@ const CadastroPessoal = () => {
     formState: { errors },
     control,
   } = useForm<FormInputTipos>({
+    resolver: zodResolver(schemaForm),
     mode: "all",
     defaultValues: {
       nome: "",
