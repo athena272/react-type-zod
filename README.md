@@ -1,4 +1,4 @@
-![Voll](thumb.png)
+![image](https://github.com/user-attachments/assets/5564c4b5-eb0a-471a-b372-23305068e0ea)
 
 # Voll
 
